@@ -1,0 +1,41 @@
+with source as(
+    select
+        encounter_id,
+        person_id,
+        encounter_type,
+        encounter_start_date,
+        encounter_end_date,
+        length_of_stay,
+        admit_source_code,
+        admit_source_description,
+        admit_type_code,
+        admit_type_description,
+        discharge_disposition_code,
+        discharge_disposition_description,
+        attending_provider_id,
+        attending_provider_name,
+        facility_id,
+        facility_name,
+        primary_diagnosis_code_type,
+        primary_diagnosis_code,
+        primary_diagnosis_description,
+        drg_code_type,
+        drg_code,
+        drg_description,
+        paid_amount,
+        allowed_amount,
+        charge_amount
+    from core.encounter
+)
+
+select encounter_id,
+        person_id,
+        encounter_type,
+        encounter_start_date,
+        encounter_end_date,
+        length_of_stay,
+        paid_amount,
+        allowed_amount,
+        charge_amount,
+        encounter_type
+from source
